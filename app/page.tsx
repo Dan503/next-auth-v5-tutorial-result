@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { auth } from './api/auth/authConfig'
+import { AuthButton } from './api/auth/AuthButton/AuthButton.server'
 
 export default async function Home() {
 	const session = await auth()
 	return (
 		<main className={styles.main}>
 			{JSON.stringify(session)}
+			<AuthButton />
 			<div className={styles.description}>
 				<p>
 					Get started by editing&nbsp;
