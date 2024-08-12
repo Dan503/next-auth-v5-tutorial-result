@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { auth } from './api/auth/authConfig'
 
-export default function Home() {
+export default async function Home() {
+	const session = await auth()
 	return (
 		<main className={styles.main}>
+			{JSON.stringify(session)}
 			<div className={styles.description}>
 				<p>
 					Get started by editing&nbsp;
