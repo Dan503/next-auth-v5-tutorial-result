@@ -7,7 +7,7 @@ interface Props {
 	getUser: () => Promise<string | null>
 }
 
-export function ClientComponentServerActionProp({ getUser }: Props) {
+export function ClientComponentUsingServerActionProp({ getUser }: Props) {
 	const [user, setUser] = useState<string | null>()
 
 	useEffect(() => {
@@ -18,7 +18,7 @@ export function ClientComponentServerActionProp({ getUser }: Props) {
 	return <p>Who am I? (server action prop): {user}</p>
 }
 
-export function ClientComponentServerActionFile() {
+export function ClientComponentUsingServerActionFile() {
 	const [user, setUser] = useState<string | null>()
 
 	useEffect(() => {

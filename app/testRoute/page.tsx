@@ -1,8 +1,9 @@
 import { auth } from '../api/auth/authConfig'
 import {
-	ClientComponentServerActionFile,
-	ClientComponentServerActionProp,
+	ClientComponentUsingServerActionFile,
+	ClientComponentUsingServerActionProp,
 } from './ClientComponentUsingServerAction'
+import { ClientComponentUsingFetchAPI } from './ClientComponentUsingFetchAPI'
 
 export default async function TestRoute() {
 	const session = await auth()
@@ -17,8 +18,11 @@ export default async function TestRoute() {
 		<main>
 			<h1>Test Route</h1>
 			<p>User: {session?.user?.name}</p>
-			<ClientComponentServerActionProp getUser={getUserServerAction} />
-			<ClientComponentServerActionFile />
+			<ClientComponentUsingServerActionProp
+				getUser={getUserServerAction}
+			/>
+			<ClientComponentUsingServerActionFile />
+			<ClientComponentUsingFetchAPI />
 		</main>
 	)
 }
