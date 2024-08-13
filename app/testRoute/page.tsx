@@ -4,6 +4,7 @@ import {
 	ClientComponentUsingServerActionProp,
 } from './ClientComponentUsingServerAction'
 import { ClientComponentUsingFetchAPI } from './ClientComponentUsingFetchAPI'
+import { ServerComponentUsingFetchAPI } from './ServerComponentUsingFetchAPI'
 
 export default async function TestRoute() {
 	const session = await auth()
@@ -23,6 +24,7 @@ export default async function TestRoute() {
 			/>
 			<ClientComponentUsingServerActionFile />
 			<ClientComponentUsingFetchAPI />
+			<ServerComponentUsingFetchAPI />
 		</main>
 	)
 }
